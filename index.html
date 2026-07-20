@@ -67,6 +67,13 @@
     .updated-banner { background: var(--accent); color: white; text-align: center; padding: 0.75rem; font-size: 0.9rem; }
     .updated-banner span { opacity: 0.9; }
     @media (max-width: 768px) { .container { grid-template-columns: 1fr; } .articles-grid { grid-template-columns: 1fr; } }
+    .topic-chart-wrap { background: white; border-radius: 8px; border: 1px solid var(--border); padding: 12px 14px; margin-bottom: 1rem; }
+    .topic-chart-wrap h3 { font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; margin-bottom: 8px; color: var(--text-sec); }
+    .topic-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 0.75rem; }
+    .topic-bar-label { min-width: 54px; text-align: right; color: var(--text-sec); font-weight: 500; }
+    .topic-bar-track { flex: 1; height: 10px; background: #f0f0f0; border-radius: 5px; overflow: hidden; }
+    .topic-bar-fill { height: 100%; border-radius: 5px; transition: width 0.6s ease; }
+    .topic-bar-count { min-width: 24px; color: var(--text-sec); font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; }
   </style>
 </head>
 <body>
@@ -276,6 +283,10 @@
     </main>
     <aside class="sidebar">
       <div class="ad-slot">📢 Ad Space</div>
+      <div class="topic-chart-wrap" id="topicChartWrap">
+        <h3>📊 Articles by Category</h3>
+        <div id="topicBars"></div>
+      </div>
       <div class="trending-list">
         <h3>🔥 Trending Now</h3>
         <div class="trending-item"><span class="number">1</span><span class="text">Summer Olympics 2026 are in full swing — here's what's happened so far and what's coming up</span></div>
@@ -293,6 +304,45 @@
   <footer><p>PulsePoint Daily © 2026 — Updated daily by Puckwudgie <span>🐸</span></p></footer>
   <script>
     document.getElementById('update-date').textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+    // Topic chart
+    (function renderTopicChart() {
+      const categoryCounts = {};
+      const links = document.querySelectorAll('.articles-grid a[href^="article-"]');
+      links.forEach(a => {
+        const href = a.getAttribute('href');
+        const card = a.closest('.articles-grid');
+        if (!card) return;
+        const heading = card.closest('section') || card;
+        const sectionTitle = heading.querySelector('.section-title');
+        if (sectionTitle) {
+          const cats = ['Tech','Sports','Culture','Viral','Music'];
+          for (const c of cats) {
+            if (sectionTitle.textContent.includes(c)) {
+              categoryCounts[c] = (categoryCounts[c] || 0) + 1;
+              break;
+            }
+          }
+        }
+      });
+      // Also scan all category HTML files
+      const barColors = { Tech: '#457b9d', Sports: '#2a9d8f', Culture: '#e9c46a', Viral: '#f4a261', Music: '#9b5de5' };
+      const container = document.getElementById('topicBars');
+      if (!container || Object.keys(categoryCounts).length === 0) return;
+      const max = Math.max(...Object.values(categoryCounts));
+      const html = Object.entries(categoryCounts)
+        .sort((a, b) => b[1] - a[1])
+        .map(([cat, count]) => {
+          const pct = Math.round((count / max) * 100);
+          const color = barColors[cat] || '#ff6b35';
+          return `<div class="topic-bar-row">
+            <span class="topic-bar-label">${cat}</span>
+            <div class="topic-bar-track"><div class="topic-bar-fill" style="width:${pct}%;background:${color}"></div></div>
+            <span class="topic-bar-count">${count}</span>
+          </div>`;
+        }).join('');
+      container.innerHTML = html;
+    })();
   </script>
 </body>
 </html>
