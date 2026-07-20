@@ -25,11 +25,11 @@
       --border: #e5e5e5;
     }
     body { font-family: 'IBM Plex Sans', sans-serif; background: var(--bg); color: var(--text); }
-    header { background: var(--bg); border-bottom: 2px solid var(--accent); color: var(--text); padding: 1.5rem 2rem; position: sticky; top: 0; z-index: 100; }
+    header { background: #ff6b35; color: white; padding: 1.5rem 2rem; position: sticky; top: 0; z-index: 100; }
     header h1 { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }
     header span { color: var(--text-sec); font-size: 0.9rem; font-weight: 400; }
-    nav { background: var(--bg); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; gap: 0.5rem; overflow-x: auto; }
-    nav a { color: var(--text-sec); text-decoration: none; font-size: 0.9rem; white-space: nowrap; padding: 0.75rem 1rem; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    nav { background: #ff6b35; padding: 0 2rem; display: flex; gap: 0.5rem; overflow-x: auto; }
+    nav a {  text-decoration: none; font-size: 0.9rem; white-space: nowrap; padding: 0.75rem 1rem; border-bottom: 3px solid transparent; transition: all 0.2s;  color: white; }
     nav a:hover, nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
     .container { max-width: 1200px; margin: 0 auto; padding: 2rem; display: grid; grid-template-columns: 1fr 300px; gap: 2rem; }
     .ad-slot { background: #f5f5f5; border: 2px dashed #ccc; border-radius: 8px; padding: 1rem; text-align: center; color: #888; font-size: 0.85rem; margin-bottom: 1.5rem; }
@@ -93,19 +93,37 @@
 
       <!-- Featured Article -->
       <div class="featured">
-        <a href="article-xchat-ios-2026.html"><img src="https://picsum.photos/seed/xchat-ios-2026/800/400" alt="XChat iOS app launch" class="featured-img"></a>
+        <a href="article-summer-olympics-2026.html"><img src="https://picsum.photos/seed/olympics-2026-opening-ceremony/800/400" alt="Summer Olympics 2026" class="featured-img"></a>
         <div class="featured-content">
           <span class="tag">Featured</span>
-          <a href="article-xchat-ios-2026.html"><h2>XChat Is Here — X's New Messaging App Promises No Tracking and Full Encryption</h2></a>
-          <p>Elon Musk's platform just launched a standalone encrypted messaging app for iOS. It claims zero tracking and end-to-end encryption. But should you trust it?</p>
-          <a href="article-xchat-ios-2026.html" class="read-more">Read more →</a>
-          <p class="meta">April 25, 2026 · 5 min read</p>
+          <a href="article-summer-olympics-2026.html"><h2>Summer Olympics 2026: The Athletes, Events, and Stories You Need to Watch</h2></a>
+          <p>Chloe Kim's emotional run, teenage phenoms stealing the show, and records falling left and right — here's your guide to the Games so far and what's coming.</p>
+          <a href="article-summer-olympics-2026.html" class="read-more">Read more →</a>
+          <p class="meta">July 20, 2026 · 5 min read</p>
         </div>
       </div>
 
       <!-- Tech Section -->
       <h3 class="section-title tech">🔌 Tech</h3>
       <div class="articles-grid">
+        <div class="article-card">
+          <a href="article-back-to-school-tech-2026.html">
+            <img src="https://picsum.photos/seed/back-to-school-tech-2026/400/200" alt="Back to school tech" class="card-img">
+            <div class="content"><h3>Back-to-School Tech 2026: Best Laptops, Tablets, and Gadgets Under $500</h3><p class="meta">Tech · 5 min read</p></div>
+          </a>
+        </div>
+        <div class="article-card">
+          <a href="article-chatgpt-kalshi-2026.html">
+            <img src="https://picsum.photos/seed/chatgpt-kalshi-2026/400/200" alt="ChatGPT prediction markets" class="card-img">
+            <div class="content"><h3>ChatGPT Now Cites Real Odds From Kalshi — Your AI Just Got Smarter About the Future</h3><p class="meta">Tech · 4 min read</p></div>
+          </a>
+        </div>
+        <div class="article-card">
+          <a href="article-claude-teachers-2026.html">
+            <img src="https://picsum.photos/seed/claude-teachers-classroom-2026/400/200" alt="Claude for Teachers" class="card-img">
+            <div class="content"><h3>Anthropic Launches Free Claude for Teachers — AI Built for the Classroom</h3><p class="meta">Tech · 4 min read</p></div>
+          </a>
+        </div>
         <div class="article-card">
           <a href="article-xchat-ios-2026.html">
             <img src="https://picsum.photos/seed/xchat-ios-2026/400/200" alt="XChat iOS app" class="card-img">
@@ -124,6 +142,12 @@
       <h3 class="section-title sports">🏃 Sports</h3>
       <div class="articles-grid">
         <div class="article-card">
+          <a href="article-summer-olympics-2026.html">
+            <img src="https://picsum.photos/seed/olympics-2026-sports-highlights/400/200" alt="Summer Olympics 2026" class="card-img">
+            <div class="content"><h3>Summer Olympics 2026: The Athletes, Events, and Stories You Need to Watch</h3><p class="meta">Sports · 5 min read</p></div>
+          </a>
+        </div>
+        <div class="article-card">
           <a href="article-nba-playoffs-2026.html">
             <img src="https://picsum.photos/seed/nba-playoffs-2026-arena/400/200" alt="NBA Playoffs 2026" class="card-img">
             <div class="content"><h3>NBA Playoffs 2026 Are Here — And the First Round Is Absolutely Wild</h3><p class="meta">Sports · 5 min read</p></div>
@@ -141,15 +165,21 @@
       <h3 class="section-title culture">🎮 Culture</h3>
       <div class="articles-grid">
         <div class="article-card">
-          <a href="article-ff14-switch2.html">
-            <img src="https://picsum.photos/seed/ff14-switch2-2026/400/200" alt="Final Fantasy XIV Switch 2" class="card-img">
-            <div class="content"><h3>Final Fantasy XIV Is Coming to Nintendo Switch 2 — And Gamers Are Losing It</h3><p class="meta">Culture · 5 min read</p></div>
+          <a href="article-cozy-games-summer-2026.html">
+            <img src="https://picsum.photos/seed/cozy-games-summer-2026/400/200" alt="Cozy games summer 2026" class="card-img">
+            <div class="content"><h3>The Cozy Games Taking Over Summer 2026</h3><p class="meta">Culture · 4 min read</p></div>
           </a>
         </div>
         <div class="article-card">
-          <a href="article-vercel-hack-2026.html">
-            <img src="https://picsum.photos/seed/vercel-hack-security-2026/400/200" alt="Vercel hack" class="card-img">
-            <div class="content"><h3>Vercel Got Hacked — And It Exposes How Fragile the Web Really Is</h3><p class="meta">Culture · 5 min read</p></div>
+          <a href="article-andy-serkis-lotr-2026.html">
+            <img src="https://picsum.photos/seed/lord-of-the-rings-casting-2026/400/200" alt="Lord of the Rings casting" class="card-img">
+            <div class="content"><h3>Andy Serkis Defends Lord of the Rings Casting — and the Internet Has Thoughts</h3><p class="meta">Culture · 4 min read</p></div>
+          </a>
+        </div>
+        <div class="article-card">
+          <a href="article-ff14-switch2.html">
+            <img src="https://picsum.photos/seed/ff14-switch2-2026/400/200" alt="Final Fantasy XIV Switch 2" class="card-img">
+            <div class="content"><h3>Final Fantasy XIV Is Coming to Nintendo Switch 2 — And Gamers Are Losing It</h3><p class="meta">Culture · 5 min read</p></div>
           </a>
         </div>
       </div>
@@ -158,15 +188,21 @@
       <h3 class="section-title viral">🔥 Viral</h3>
       <div class="articles-grid">
         <div class="article-card">
-          <a href="article-openai-apology-2026.html">
-            <img src="https://picsum.photos/seed/openai-altman-apology-2026/400/200" alt="Sam Altman apology" class="card-img">
-            <div class="content"><h3>Sam Altman Just Apologized — And the Story Behind It Is Darker Than You'd Think</h3><p class="meta">Viral · 5 min read</p></div>
+          <a href="article-summer-viral-memes-2026.html">
+            <img src="https://picsum.photos/seed/summer-viral-memes-2026/400/200" alt="Summer viral memes 2026" class="card-img">
+            <div class="content"><h3>The Summer Memes That Actually Broke the Internet in 2026</h3><p class="meta">Viral · 3 min read</p></div>
           </a>
         </div>
         <div class="article-card">
-          <a href="article-tiktok-say-word-on-beat-2026.html">
-            <img src="https://picsum.photos/seed/tiktok-game-trend-2026/400/200" alt="TikTok game trend" class="card-img">
-            <div class="content"><h3>The "Say the Word on Beat" TikTok Game Is Taking Over</h3><p class="meta">Viral · 4 min read</p></div>
+          <a href="article-new-emoji-2026.html">
+            <img src="https://picsum.photos/seed/new-emoji-cracking-face-2026/400/200" alt="New emoji 2026" class="card-img">
+            <div class="content"><h3>The New Cracking Face Emoji Is Here — And It Might Be the Best One Yet</h3><p class="meta">Viral · 3 min read</p></div>
+          </a>
+        </div>
+        <div class="article-card">
+          <a href="article-openai-apology-2026.html">
+            <img src="https://picsum.photos/seed/openai-altman-apology-2026/400/200" alt="Sam Altman apology" class="card-img">
+            <div class="content"><h3>Sam Altman Just Apologized — And the Story Behind It Is Darker Than You'd Think</h3><p class="meta">Viral · 5 min read</p></div>
           </a>
         </div>
       </div>
@@ -174,6 +210,12 @@
       <!-- Music Section -->
       <h3 class="section-title music">🎵 Music</h3>
       <div class="articles-grid">
+        <div class="article-card">
+          <a href="article-summer-music-drop-2026.html">
+            <img src="https://picsum.photos/seed/summer-albums-2026/400/200" alt="Summer album season 2026" class="card-img">
+            <div class="content"><h3>Summer Album Season 2026: The Releases Everyone's Actually Listening To</h3><p class="meta">Music · 4 min read</p></div>
+          </a>
+        </div>
         <div class="article-card">
           <a href="article-epic-musical-odyssey-2026.html">
             <img src="https://picsum.photos/seed/epic-musical-odyssey-2026/400/200" alt="Epic musical Odyssey movie" class="card-img">
@@ -236,12 +278,14 @@
       <div class="ad-slot">📢 Ad Space</div>
       <div class="trending-list">
         <h3>🔥 Trending Now</h3>
-        <div class="trending-item"><span class="number">1</span><span class="text">XChat launches on iOS — X promises "no tracking" and end-to-end encryption</span></div>
-        <div class="trending-item"><span class="number">2</span><span class="text">Final Fantasy XIV confirmed for Nintendo Switch 2 — free early access in August</span></div>
-        <div class="trending-item"><span class="number">3</span><span class="text">Sam Altman apologizes after ChatGPT used in school shooting plot — no law enforcement notified</span></div>
-        <div class="trending-item"><span class="number">4</span><span class="text">"Epic" — viral musical retelling of The Odyssey — now an animated movie</span></div>
-        <div class="trending-item"><span class="number">5</span><span class="text">NBA Playoffs 2026 — Lakers steal Game 1 vs Rockets, Celtics vs Knicks underway</span></div>
-        <div class="trending-item"><span class="number">6</span><span class="text">Tim Cook stepping down as Apple CEO in September — end of an era</span></div>
+        <div class="trending-item"><span class="number">1</span><span class="text">Summer Olympics 2026 are in full swing — here's what's happened so far and what's coming up</span></div>
+        <div class="trending-item"><span class="number">2</span><span class="text">France vs Spain World Cup semi-final — Lamine Yamal vs Mbappé in Tuesday's showdown</span></div>
+        <div class="trending-item"><span class="number">3</span><span class="text">Anthropic launches free Claude for Teachers — AI built for US K-12 classrooms</span></div>
+        <div class="trending-item"><span class="number">4</span><span class="text">The new cracking face emoji just dropped — Unicode approved and already going viral</span></div>
+        <div class="trending-item"><span class="number">5</span><span class="text">Andy Serkis defends Lord of the Rings casting as Kate Winslet joins the franchise</span></div>
+        <div class="trending-item"><span class="number">6</span><span class="text">Back-to-school tech roundup 2026: the best laptops and tablets under $500</span></div>
+        <div class="trending-item"><span class="number">7</span><span class="text">Summer album season is here — Nova Cruz's "Golden Hour" is the album everyone is streaming</span></div>
+        <div class="trending-item"><span class="number">8</span><span class="text">The cozy games genre is exploding — these are the titles defining summer 2026</span></div>
       </div>
       <div class="ad-slot" style="margin-top: 1rem;">📢 Ad Space</div>
     </aside>
